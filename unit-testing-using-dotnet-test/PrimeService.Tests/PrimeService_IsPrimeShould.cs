@@ -1,9 +1,9 @@
 using Xunit;
 using SquareEquationLib;
 
-namespace PrimeService_Tests
+namespace SquareEquation_Test
 {
-    public class PrimeService_Tests
+    public class SquareEquation_Test
     {
 
     [Theory]
@@ -46,8 +46,8 @@ namespace PrimeService_Tests
 
             for (int i = 0; i < expected.Length; i++)
             {
-                Assert.Equal(expected[i], actual[i], 5);
+                Assert.Equal(expected[i], actual[i], 6);
             }
         }
-}
+    }
 }
