@@ -11,7 +11,7 @@ public class SquareEquation
         {
             throw new System.ArgumentException();
         }
-
+ 
         foreach (double x in new double[] { a, b, c })
         {
             if (double.IsNaN(x) || double.IsInfinity(x))
