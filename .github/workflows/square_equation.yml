@@ -35,5 +35,5 @@ jobs:
         run: dotnet test
 
       - name: Find code coverage
-        run: dotnet-coverage collect
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
         
