@@ -3,7 +3,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["fork-with-tests"]
 
 jobs:
   build:
@@ -36,4 +36,4 @@ jobs:
 
       - name: Find code coverage
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
-        
+      
