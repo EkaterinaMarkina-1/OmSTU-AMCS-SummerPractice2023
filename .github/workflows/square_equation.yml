@@ -32,7 +32,8 @@ jobs:
         run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
        
       - name: Run unit tests
-        run: npm test
+        run: dotnet test
 
       - name: Find code coverage
-        run: npm run coverage
+        run: dotnet run coverage
+        
