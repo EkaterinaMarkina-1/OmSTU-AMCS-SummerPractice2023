@@ -18,7 +18,7 @@ namespace SquareEquation_Test
      [InlineData(double.NegativeInfinity, 2, 3)]
      [InlineData(2, double.NegativeInfinity, 3)]
      [InlineData(2, 3, double.NegativeInfinity)]
-    public void testValidArgument(double a,double b, double c)
+    public void Solve_ThrowsArgumentException(double a,double b, double c)
     {
         Assert.Throws<ArgumentException>(() => SquareEquation.Solve(a, b, c));
     }
@@ -29,7 +29,7 @@ namespace SquareEquation_Test
         [InlineData(1, -2, 1, new double[] { 1 })]
         [InlineData(1, 0, -1, new double[] { 1, -1 })]
 
-        public void ValidFindRoot(double a, double b, double c, double[] expected)
+        public void  Solve_ReturnsCorrectRoots(double a, double b, double c, double[] expected)
         {
             
         double[] actual = SquareEquation.Solve(a, b, c);
@@ -40,7 +40,7 @@ namespace SquareEquation_Test
 
             if (expected.Length != actual.Length)
             {
-                Assert.Fail("Amount of roots does not match");
+                Assert.Fail("The number of roots does not match the expected result.");
             }
 
             for (int i = 0; i < expected.Length; i++)
