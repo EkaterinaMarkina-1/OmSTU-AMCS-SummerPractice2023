@@ -1,4 +1,4 @@
-name: square equation test
+name: fork-with-tests
 
 on:
   push:
