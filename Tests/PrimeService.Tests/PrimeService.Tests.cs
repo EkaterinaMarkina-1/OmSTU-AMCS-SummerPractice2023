@@ -1,9 +1,9 @@
 using Xunit;
 using SquareEquationLib;
 
-namespace SquareEquation_Test
+namespace Test
 {
-    public class SquareEquation_Test
+    public class Test
     {
 
     [Theory]
