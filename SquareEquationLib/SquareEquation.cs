@@ -27,16 +27,26 @@ public class SquareEquation
             answer = new double[0];
 
         }
-        else if (d < eps)
+       else if (d < eps)
         {
             answer = new double[1];
-            answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
+            if(b!=0){
+                answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
+            }
+            else{
+                answer[0] = -(b +  Math.Sqrt(d)) / 2;
+            }
 
         }
         else
         {
             answer = new double[2];
-            answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
+           if(b!=0){
+                answer[0] = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
+            }
+            else{
+                answer[0] = -(b +  Math.Sqrt(d)) / 2;
+            }
             answer[1] = c / answer[0];
 
         }
