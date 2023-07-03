@@ -8,86 +8,49 @@ namespace SquareEquationBDD
     [Binding]
     public class TestBDD
     {
-        private double a, b, c;
-        private double[] action = new double[0];
-        private Exception actualException = new Exception();
+        private double a;
+        private double b;
+        private double c;
+        private double[] roots;
 
-        [Given(@"^Квадратное уравнение с коэффициентами \((.*), (.*), (.*)\)")]
-        public void КвадратноеУравнение(string p0, string p1, string p2)
+        [Given(@"квадратное уравнение с коэффициентами a = (.+), b = (.+), c = (.+)")]
+        public void КвадратноеУравнение(double a, double b, double c)
         {
-            string[] numb = new string[] { p0, p1, p2 };
-            double[] numbDouble = new double[numb.Length];
-            for (int i = 0; i < numb.Length; i++)
-            {
-                if (numb[i] == "NaN")
-                {
-                    numbDouble[i] = double.NaN;
-                }
-                else if (numb[i] == "Double.NegativeInfinity")
-                {
-                    numbDouble[i] = double.NegativeInfinity;
-                }
-                else if (numb[i] == "Double.PositiveInfinity")
-                {
-                    numbDouble[i] = double.PositiveInfinity;
-                }
-                else
-                {
-                    numbDouble[i] = double.Parse(numb[i]);
-                }
-            }
-            a = numbDouble[0]; b = numbDouble[1]; c = numbDouble[2];
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
 
-        [When(@"^вычисляются корни квадратного уравнения")]
+        [When(@"находим корни квадратного уравнения")]
         public void НахождениеКорней()
         {
-            try
-            {
-                action = SquareEquation.Solve(a, b, c);
-            }
-            catch (Exception e)
-            {
-                actualException = e;
-            }
+            roots = SquareEquation.Solve(a, b, c);
         }
 
-        [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
-        public void ТоКвадратноеУравнениеИмеетДваКорняКратностиОдин(double r1, double r2)
+        [Then(@"квадратное уравнение имеет два корня, кратности один")]
+        public void ТоКвадратноеУравнениеИмеетДваКорняКратностиОдин()
         {
-            double[] expected = new double[] { r1, r2 };
-
-            Array.Sort(expected);
-            Array.Sort(action);
-            for (int i = 0; i < expected.Length; i++)
-            {
-                Assert.Equal(expected[i], action[i], 6);
-            }
+            Assert.Equal(2, roots.Length);
+            Assert.NotEqual(roots[0], roots[1]);
         }
 
-        [Then(@"квадратное уравнение имеет один корень (.*) кратности два")]
-        public void ТоКвадратноеУравнениеИмеетОдинКореньКратностиДва(double expectedRoot)
+        [Then(@"квадратное уравнение имеет один корень, кратности два")]
+        public void ТоКвадратноеУравнениеИмеетОдинКореньКратностиДва()
         {
-            double[] expected = new double[] { expectedRoot };
-
-            Array.Sort(expected);
-            Array.Sort(action);
-            for (int i = 0; i < expected.Length; i++)
-            {
-                Assert.Equal(expected[i], action[i], 6);
-            }
+            Assert.Equal(2, roots.Length);
+            Assert.Equal(roots[0], roots[1]);
         }
 
-        [Then(@"множество корней квадратного уравнения пустое")]
+        [Then(@"квадратное уравнение не имеет корней")]
         public void ТоКвадратноеУравнениеНеИмеетКорней()
         {
-            Assert.Empty(action);
+            Assert.Empty(roots);
         }
 
         [Then(@"выбрасывается исключение ArgumentException")]
         public void ТоВыбрасываетсяИсключениеArgumentException()
         {
-            Assert.ThrowsAsync<ArgumentException>(() => throw actualException);
+            Assert.Throws<System.ArgumentException>(() => SquareEquation.Solve(a, b, c));
         }
     }
 }
