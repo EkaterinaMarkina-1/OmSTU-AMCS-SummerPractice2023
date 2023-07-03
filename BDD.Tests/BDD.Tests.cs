@@ -13,13 +13,26 @@ namespace SquareEquationBDD
         private Exception actualException;
 
         [Given(@"^Квадратное уравнение с коэффициентами \((.*), (.*), (.*)\)")]
-        public void КвадратноеУравнение(string p0, string p1, string p2)
-        {
-            a = double.Parse(p0);
-            b = double.Parse(p1);
-            c = double.Parse(p2);
-        }
-
+       public void КвадратноеУравнение(string p0, string p1, string p2)
+    {
+        string[] numb = new string[]{p0, p1, p2};
+        double[] numbDouble = new double[numb.Length];
+        for (int i=0; i < numb.Length; i++){
+            if(numb[i] == "NaN"){
+                numbDouble[i] = double.NaN;
+            }
+            else if(numb[i] == "Double.NegativeInfinity"){
+                numbDouble[i] = double.NegativeInfinity;
+            }
+            else if(numb[i] == "Double.PositiveInfinity"){
+                numbDouble[i] = double.PositiveInfinity;
+            }
+            else{
+                numbDouble[i] = double.Parse(numb[i]);
+            }
+        } 
+        a = numbDouble[0]; b = numbDouble[1]; c = numbDouble[2];
+    }
         [When(@"^вычисляются корни квадратного уравнения")]
         public void НахождениеКорней()
         {
