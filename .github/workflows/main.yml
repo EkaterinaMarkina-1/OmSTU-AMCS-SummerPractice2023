@@ -18,7 +18,7 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore Space
+        run: dotnet restore SpaceBattle
 
       - name: Coverage and Tests
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
