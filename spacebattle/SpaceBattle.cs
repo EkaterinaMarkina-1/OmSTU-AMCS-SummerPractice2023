@@ -1,4 +1,5 @@
-﻿namespace SpaceWarLib
+﻿
+namespace SpaceWarLib
 {
     public class SpaceMove
     {
