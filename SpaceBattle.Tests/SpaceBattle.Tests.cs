@@ -1,6 +1,6 @@
 namespace SpaceBattleWar;
 using TechTalk.SpecFlow;
-using SpaceWarLib;
+using SpaceBattle;
 
 [Binding]
 public class StepDefinitions
