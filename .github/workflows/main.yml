@@ -1,4 +1,4 @@
-name: space_war tests
+name: space_war
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SpaceBattle
+        run: dotnet restore SpaceWar
 
       - name: Coverage and Tests
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura

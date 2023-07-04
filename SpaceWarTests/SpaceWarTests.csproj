@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SpaceBattle\SpaceBattle.csproj" />
+    <ProjectReference Include="..\SpaceWar\SpaceWar.csproj" />
   </ItemGroup>
 
 </Project>
