@@ -1,4 +1,4 @@
-namespace SpaceBattleWar;
+namespace SpaceWarLib;
 using TechTalk.SpecFlow;
 using SpaceBattle;
 
