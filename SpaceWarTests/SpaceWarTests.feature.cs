@@ -19,7 +19,7 @@ namespace SpaceWarTests
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ПеремещениеКорабляFeature : object, Xunit.IClassFixture<ПеремещениеКорабляFeature.FixtureData>, System.IDisposable
+    public partial class ДвижениеКорабляFeature : object, Xunit.IClassFixture<ДвижениеКорабляFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace SpaceWarTests
 #line 1 "SpaceWarTests.feature"
 #line hidden
         
-        public ПеремещениеКорабляFeature(ПеремещениеКорабляFeature.FixtureData fixtureData, SpaceWarTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ДвижениеКорабляFeature(ДвижениеКорабляFeature.FixtureData fixtureData, SpaceWarTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace SpaceWarTests
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("ru-RU"), "", "Перемещение корабля", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("ru-RU"), "", "Движение корабля", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,7 +81,7 @@ namespace SpaceWarTests
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Игровой объект может перемещаться по прямой")]
-        [Xunit.TraitAttribute("FeatureTitle", "Перемещение корабля")]
+        [Xunit.TraitAttribute("FeatureTitle", "Движение корабля")]
         [Xunit.TraitAttribute("Description", "Игровой объект может перемещаться по прямой")]
         public void ИгровойОбъектМожетПеремещатьсяПоПрямой()
         {
@@ -116,7 +116,7 @@ namespace SpaceWarTests
         
         [Xunit.SkippableFactAttribute(DisplayName="Если невозможно определить текущее положение игрового объекта в пространстве, то " +
             "перемещение по прямой невозможно")]
-        [Xunit.TraitAttribute("FeatureTitle", "Перемещение корабля")]
+        [Xunit.TraitAttribute("FeatureTitle", "Движение корабля")]
         [Xunit.TraitAttribute("Description", "Если невозможно определить текущее положение игрового объекта в пространстве, то " +
             "перемещение по прямой невозможно")]
         public void ЕслиНевозможноОпределитьТекущееПоложениеИгровогоОбъектаВПространствеТоПеремещениеПоПрямойНевозможно()
@@ -153,7 +153,7 @@ namespace SpaceWarTests
         
         [Xunit.SkippableFactAttribute(DisplayName="Если невозможно определить мгновенную скорость игрового объекта, то перемещение п" +
             "о прямой невозможно")]
-        [Xunit.TraitAttribute("FeatureTitle", "Перемещение корабля")]
+        [Xunit.TraitAttribute("FeatureTitle", "Движение корабля")]
         [Xunit.TraitAttribute("Description", "Если невозможно определить мгновенную скорость игрового объекта, то перемещение п" +
             "о прямой невозможно")]
         public void ЕслиНевозможноОпределитьМгновеннуюСкоростьИгровогоОбъектаТоПеремещениеПоПрямойНевозможно()
@@ -190,7 +190,7 @@ namespace SpaceWarTests
         
         [Xunit.SkippableFactAttribute(DisplayName="Если невозможно изменить положение игрового объекта в пространстве, то перемещени" +
             "е по прямой невозможно")]
-        [Xunit.TraitAttribute("FeatureTitle", "Перемещение корабля")]
+        [Xunit.TraitAttribute("FeatureTitle", "Движение корабля")]
         [Xunit.TraitAttribute("Description", "Если невозможно изменить положение игрового объекта в пространстве, то перемещени" +
             "е по прямой невозможно")]
         public void ЕслиНевозможноИзменитьПоложениеИгровогоОбъектаВПространствеТоПеремещениеПоПрямойНевозможно()
@@ -235,12 +235,12 @@ namespace SpaceWarTests
             
             public FixtureData()
             {
-                ПеремещениеКорабляFeature.FeatureSetup();
+                ДвижениеКорабляFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ПеремещениеКорабляFeature.FeatureTearDown();
+                ДвижениеКорабляFeature.FeatureTearDown();
             }
         }
     }
